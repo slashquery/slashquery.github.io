@@ -1,1 +1,1 @@
-http://slashquery.run
+http://slashquery.com
