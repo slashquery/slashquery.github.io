@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SlashQuery /?</title>
+    <link>https://slashquery.com/</link>
+    <description>Recent content on SlashQuery /?</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright> </copyright>
+    <lastBuildDate>Sun, 21 May 2017 22:52:45 +0200</lastBuildDate>
+    
+	<atom:link href="https://slashquery.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>SlashQuery /?</title>
+      <link>https://slashquery.com/about/</link>
+      <pubDate>Sun, 21 May 2017 22:52:45 +0200</pubDate>
+      
+      <guid>https://slashquery.com/about/</guid>
+      <description>What is slashquery ? An API Gateway</description>
+    </item>
+    
+  </channel>
+</rss>
