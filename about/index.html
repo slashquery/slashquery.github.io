@@ -70,7 +70,22 @@
 
 <h1 id="what-is-slashquery">What is slashquery ?</h1>
 
-<p>An API Gateway</p>
+<p>A pluggable API Gateway</p>
+
+<p>In a nutshell is an HTTP reverse proxy that pre-processes the requests before
+they arrive at their final destination.</p>
+
+<p>Some features:</p>
+
+<ul>
+<li>Single binary.</li>
+<li>Loads configuration from a YAML file.</li>
+<li>Allows the use of 3rt party handlers (plugins) that satisfy the <a href="https://golang.org/pkg/net/http/#Handler">http.Handler</a>.</li>
+<li>DNS resolver honoring TTL from the upstream.</li>
+<li>Load balancer (round robin).</li>
+<li>Versioning <a href="https://violetear.org/post/versioning/">Accept: application/vnd.*</a></li>
+<li>Accept or reject(405) based on HTTP Request Methods</li>
+</ul>
 
                 </section>
             </article>

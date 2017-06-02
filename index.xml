@@ -18,7 +18,10 @@
       <pubDate>Sun, 21 May 2017 22:52:45 +0200</pubDate>
       
       <guid>https://slashquery.com/about/</guid>
-      <description>What is slashquery ? An API Gateway</description>
+      <description> What is slashquery ? A pluggable API Gateway
+In a nutshell is an HTTP reverse proxy that pre-processes the requests before they arrive at their final destination.
+Some features:
+ Single binary. Loads configuration from a YAML file. Allows the use of 3rt party handlers (plugins) that satisfy the http.Handler. DNS resolver honoring TTL from the upstream. Load balancer (round robin). Versioning Accept: application/vnd.* Accept or reject(405) based on HTTP Request Methods  </description>
     </item>
     
   </channel>
