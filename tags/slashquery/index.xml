@@ -13,11 +13,11 @@
     
     
     <item>
-      <title>Building microservices using an API Gateway.</title>
-      <link>https://slashquery.com/post/building-microservices-using-an-api-gateway/</link>
+      <title>Microservices using an API Gateway.</title>
+      <link>https://slashquery.com/post/microservices-using-an-api-gateway/</link>
       <pubDate>Sat, 03 Jun 2017 09:58:25 +0200</pubDate>
       
-      <guid>https://slashquery.com/post/building-microservices-using-an-api-gateway/</guid>
+      <guid>https://slashquery.com/post/microservices-using-an-api-gateway/</guid>
       <description>The big picture:
 (slashquery API Gateway) api.example.com/&amp;lt;path endpoint&amp;gt; | (plugins) (upstream) (microservices) | /home | /* &amp;gt;--[middleware]---[LoadBalancer]--&amp;lt; /home | /home | | /foo | /foo/* &amp;gt;--[middleware]---[LoadBalancer]--&amp;lt; /foo | /foo | | /foo-version-2 (versioning) | /foo/* &amp;gt;--[middleware]---[LoadBalancer]--&amp;lt; /foo-version-2 | /foo-version-2 | | /bar ` /bar/* &amp;gt;--[middleware]---[LoadBalancer]--&amp;lt; /bar /bar   More about versioning: https://violetear.org/post/versioning/
  The configuration file in YAML format:
