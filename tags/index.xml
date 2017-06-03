@@ -7,9 +7,37 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright> </copyright>
+    <lastBuildDate>Sat, 03 Jun 2017 09:58:25 +0200</lastBuildDate>
     
 	<atom:link href="https://slashquery.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Api</title>
+      <link>https://slashquery.com/tags/api/</link>
+      <pubDate>Sat, 03 Jun 2017 09:58:25 +0200</pubDate>
+      
+      <guid>https://slashquery.com/tags/api/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Microservices</title>
+      <link>https://slashquery.com/tags/microservices/</link>
+      <pubDate>Sat, 03 Jun 2017 09:58:25 +0200</pubDate>
+      
+      <guid>https://slashquery.com/tags/microservices/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Slashquery</title>
+      <link>https://slashquery.com/tags/slashquery/</link>
+      <pubDate>Sat, 03 Jun 2017 09:58:25 +0200</pubDate>
+      
+      <guid>https://slashquery.com/tags/slashquery/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

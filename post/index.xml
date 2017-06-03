@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>SlashQuery /?</title>
-    <link>https://slashquery.com/</link>
-    <description>Recent content on SlashQuery /?</description>
+    <title>Posts on SlashQuery /?</title>
+    <link>https://slashquery.com/post/</link>
+    <description>Recent content in Posts on SlashQuery /?</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright> </copyright>
     <lastBuildDate>Sat, 03 Jun 2017 09:58:25 +0200</lastBuildDate>
     
-	<atom:link href="https://slashquery.com/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://slashquery.com/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -22,18 +22,6 @@
 (slashquery API Gateway) api.example.com/&amp;lt;path endpoint&amp;gt; | (plugins) (upstream) (microservices) | /home | /* &amp;gt;--[middleware]---[LoadBalancer]--&amp;lt; /home | /home | | /foo | /foo/* &amp;gt;--[middleware]---[LoadBalancer]--&amp;lt; /foo | /foo | | /foo-version-2 (versioning) | /foo/* &amp;gt;--[middleware]---[LoadBalancer]--&amp;lt; /foo-version-2 | /foo-version-2 | | /bar ` /bar/* &amp;gt;--[middleware]---[LoadBalancer]--&amp;lt; /bar /bar   More about versioning: https://violetear.org/post/versioning/
  The configuration file in YAML format:
 config: host: ~ # listen all IP&#39;s port: 80 resolver: 8.</description>
-    </item>
-    
-    <item>
-      <title>SlashQuery /?</title>
-      <link>https://slashquery.com/about/</link>
-      <pubDate>Sun, 21 May 2017 22:52:45 +0200</pubDate>
-      
-      <guid>https://slashquery.com/about/</guid>
-      <description> What is slashquery ? A pluggable API Gateway
-In a nutshell is an HTTP reverse proxy that pre-processes the requests before they arrive at their final destination based on custom plugins.
-Some features:
- Single binary. Loads configuration from a YAML file. Allows the use of 3rd party handlers (plugins) that satisfy the http.Handler. DNS resolver honoring TTL from the upstream. Load balancer (round robin). Versioning Accept: application/vnd.* Accept or reject(405) based on HTTP Request Methods  </description>
     </item>
     
   </channel>
