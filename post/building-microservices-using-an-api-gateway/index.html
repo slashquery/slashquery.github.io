@@ -116,10 +116,10 @@ api.example.com/&lt;path endpoint&gt;
   request-id: X-Request-Id # use existing header
 
 routes:
-  ~: # api.example.com/* -&gt; http://httpbin.org/get
-    path: /get
-    upstream: httpbin
-    host: httpbin.org
+  ~: # api.example.com/* -&gt; http://example.com/*
+    path:
+    upstream: home
+    host: example.com
     plugins:
       - [&quot;github.com/slashquery-plugins/requestid&quot;, &quot;requestid.RequestID&quot;]
       - [&quot;github.com/slashquery-plugins/waf&quot;, &quot;waf.WAF&quot;]
@@ -156,9 +156,10 @@ routes:
       - [&quot;github.com/slashquery-plugins/cors&quot;, &quot;cors.CORS&quot;]
 
 upstreams:
-  httpbin:
+  home:
     servers:
-      - httpbin.org
+      - home.example.com
+      - home.example.org
 </code></pre>
 
                 </section>
