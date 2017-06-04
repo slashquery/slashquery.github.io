@@ -93,23 +93,23 @@ the gateway needs to be build.</p>
 
 <p>For example using $HOME/go for your workspace</p>
 
-<pre><code>$ export GOPATH=$HOME/go
+<pre><code>export GOPATH=$HOME/go
 </code></pre>
 
 <p>Create the directory:</p>
 
-<pre><code>$ mkdir -p $HOME/go/src/github.com/slashquery
+<pre><code>mkdir -p $HOME/go/src/github.com/slashquery
 </code></pre>
 
 <p>Clone project into that directory:</p>
 
-<pre><code>$ git clone git@github.com:slashquery/slashquery.git $HOME/go/src/github.com/slashquery/slashquery
+<pre><code>git clone git@github.com:slashquery/slashquery.git $HOME/go/src/github.com/slashquery/slashquery
 </code></pre>
 
-<p>Build by just typing <code>make</code>:</p>
+<p>Create your configuration file and type <code>make CONFIG=/path/to/slashquery.yml</code>:</p>
 
-<pre><code>$ cd $HOME/go/src/github.com/slashquery/slashquery
-$ make CONFIG=/path/to/slashquery.yml
+<pre><code>cd $HOME/go/src/github.com/slashquery/slashquery
+make CONFIG=/path/to/slashquery.yml
 </code></pre>
 
 <h1 id="how-it-works">How it works</h1>

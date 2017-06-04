@@ -22,9 +22,9 @@
 Setup Setup go environment https://golang.org/doc/install
  go &amp;gt;= 1.7 is required
  For example using $HOME/go for your workspace
-$ export GOPATH=$HOME/go  Create the directory:
-$ mkdir -p $HOME/go/src/github.com/slashquery  Clone project into that directory:
-$ git clone git@github.</description>
+export GOPATH=$HOME/go  Create the directory:
+mkdir -p $HOME/go/src/github.com/slashquery  Clone project into that directory:
+git clone git@github.com:slashquery/slashquery.git $HOME/go/src/github.com/slashquery/slashquery  Create your configuration file and type make CONFIG=/path/to/slashquery.</description>
     </item>
     
   </channel>
