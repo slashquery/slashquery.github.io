@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Middleware on SlashQuery /?</title>
+    <link>https://slashquery.com/tags/middleware/</link>
+    <description>Recent content in Middleware on SlashQuery /?</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright> </copyright>
+    <lastBuildDate>Sat, 03 Jun 2017 09:56:24 +0200</lastBuildDate>
+    
+	<atom:link href="https://slashquery.com/tags/middleware/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Plugins</title>
+      <link>https://slashquery.com/post/plugins/</link>
+      <pubDate>Sat, 03 Jun 2017 09:56:24 +0200</pubDate>
+      
+      <guid>https://slashquery.com/post/plugins/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

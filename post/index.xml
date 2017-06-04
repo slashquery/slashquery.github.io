@@ -40,6 +40,15 @@ git clone git@github.com:slashquery/slashquery.git $HOME/go/src/github.com/slash
     </item>
     
     <item>
+      <title>Plugins</title>
+      <link>https://slashquery.com/post/plugins/</link>
+      <pubDate>Sat, 03 Jun 2017 09:56:24 +0200</pubDate>
+      
+      <guid>https://slashquery.com/post/plugins/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Using Nginx and go through unix socket</title>
       <link>https://slashquery.com/post/nginx-and-go-through-unix-socket/</link>
       <pubDate>Sat, 03 Jun 2017 09:56:23 +0200</pubDate>

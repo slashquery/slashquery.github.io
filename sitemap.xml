@@ -12,6 +12,11 @@
   </url>
   
   <url>
+    <loc>https://slashquery.com/post/plugins/</loc>
+    <lastmod>2017-06-03T09:56:24+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://slashquery.com/post/nginx-and-go-through-unix-socket/</loc>
     <lastmod>2017-06-03T09:56:23+02:00</lastmod>
   </url>
@@ -40,8 +45,20 @@
   </url>
   
   <url>
+    <loc>https://slashquery.com/tags/middleware/</loc>
+    <lastmod>2017-06-03T09:56:24+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://slashquery.com/tags/nginx/</loc>
     <lastmod>2017-06-03T09:56:23+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://slashquery.com/tags/plugins/</loc>
+    <lastmod>2017-06-03T09:56:24+02:00</lastmod>
     <priority>0</priority>
   </url>
   
