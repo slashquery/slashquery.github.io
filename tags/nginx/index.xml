@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright> </copyright>
-    <lastBuildDate>Sat, 03 Jun 2017 09:58:24 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 03 Jun 2017 09:56:23 +0200</lastBuildDate>
     
 	<atom:link href="https://slashquery.com/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>Using Nginx and go through unix socket</title>
       <link>https://slashquery.com/post/nginx-and-go-through-unix-socket/</link>
-      <pubDate>Sat, 03 Jun 2017 09:58:24 +0200</pubDate>
+      <pubDate>Sat, 03 Jun 2017 09:56:23 +0200</pubDate>
       
       <guid>https://slashquery.com/post/nginx-and-go-through-unix-socket/</guid>
       <description>Nginx configuration:

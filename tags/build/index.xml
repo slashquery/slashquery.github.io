@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright> </copyright>
-    <lastBuildDate>Sat, 03 Jun 2017 09:57:25 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 03 Jun 2017 09:57:24 +0200</lastBuildDate>
     
 	<atom:link href="https://slashquery.com/tags/build/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>Build your API Gateway</title>
       <link>https://slashquery.com/post/build-your-api-gateway/</link>
-      <pubDate>Sat, 03 Jun 2017 09:57:25 +0200</pubDate>
+      <pubDate>Sat, 03 Jun 2017 09:57:24 +0200</pubDate>
       
       <guid>https://slashquery.com/post/build-your-api-gateway/</guid>
       <description>Because of the plugins (middleware) is not possible to have a generic binary, therefore after creating the configuration file and based on the plugins defined the gateway needs to be build.
