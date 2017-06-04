@@ -1,4 +1,4 @@
-	<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en-us">
 	<head>
 		<meta charset="utf-8">
@@ -8,7 +8,7 @@
 		<meta name="description" content="API Gateway">
 		<meta name="keywords" content="api, gateway, http, rest, plugging">
 		<meta name="generator" content="Hugo 0.20.7" />
-		<title>404 Page not found &middot; SlashQuery /?</title>
+		<title>Using Nginx and go through unix socket &middot; SlashQuery /?</title>
 		<link rel="shortcut icon" href="https://slashquery.com/images/favicon.ico">
         <link rel="apple-touch-icon" sizes="57x57" href="https://slashquery.com/images/apple-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="60x60" href="https://slashquery.com/images/apple-icon-60x60.png">
@@ -42,8 +42,8 @@
         <link rel="stylesheet" href='//fonts.googleapis.com/css?family=Droid+Sans:400,700%7CRoboto:400,700,900' type='text/css'>
 	</head>
 
-	<body>
-    <nav class="main-nav">
+    <body>
+       <nav class="main-nav">
 	
 	
 		<a href='https://slashquery.com/'> <span class="arrow">←</span>Home</a>
@@ -60,12 +60,83 @@
 	
 </nav>
 
-    <section id="wrapper" class="home">
-        <article class="post">
-            <header>
-                <h1>404 - Page not found</h1>
-                <h3>The content you're looking for doesn't seem to exist.</h3>
-            </header>
+        <section id="wrapper">
+            <article class="post">
+                <header>
+                    <h1>Using Nginx and go through unix socket</h1>
+                    <h2 class="headline">
+                    <br>
+                    
+                    </h2>
+                </header>
+                <section id="post-body">
+                    <p>Nginx configuration:</p>
+
+<pre><code class="language-nginx">upstream slashquery {
+    server unix:/tmp/slashquery.sock
+    keepalive 60;
+}
+
+server {
+    listen 80 default_server;
+    server_name _;
+
+    location / {
+        proxy_pass http://slashquery;
+        proxy_http_version 1.1; # for keep-alive
+        proxy_redirect off;
+        proxy_set_header Host $http_host;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+</code></pre>
+
+<p>SlashQuery configuration:</p>
+
+<pre><code class="language-yaml">config:
+  socket: /tmp/slashquery.sock
+  resolver: 8.8.8.8  # fallback to /etc/resolve.conf
+  request-id: X-Request-Id # use existing header
+  ...
+</code></pre>
+
+<p>When <code>socket</code> is defined <code>host</code> and <code>port</code> are ignored.</p>
+
+                </section>
+            </article>
+            <footer id="post-meta" class="clearfix">
+                
+                    
+                <section id="sharing">
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fslashquery.com%2fpost%2fnginx-and-go-through-unix-socket%2f - Using%20Nginx%20and%20go%20through%20unix%20socket "><span class="icon-twitter"> Tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+                </section>
+            </footer>
+
+            <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'slashquery';
+    var disqus_identifier = 'https:\/\/slashquery.com\/post\/nginx-and-go-through-unix-socket\/';
+    var disqus_title = 'Using Nginx and go through unix socket';
+    var disqus_url = 'https:\/\/slashquery.com\/post\/nginx-and-go-through-unix-socket\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
             <ul id="post-list" class="archive readmore">
     <h3>Read more</h3>
@@ -130,9 +201,7 @@
         
    
 </ul>
-        </article>
-
-        <footer id="footer">
+            <footer id="footer">
     
         <div id="social">
 
@@ -155,6 +224,26 @@
     </p>
 </footer>
 
-    </section>
+        </section>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://slashquery.com/js/main.js"></script>
+<script src="https://slashquery.com/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-79517076-13', 'auto');
+ga('send', 'pageview');
+</script>
+
+
     </body>
 </html>
