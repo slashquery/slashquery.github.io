@@ -8,7 +8,7 @@
 		<meta name="description" content="API Gateway">
 		<meta name="keywords" content="api, gateway, http, rest, plugging">
 		<meta name="generator" content="Hugo 0.20.7" />
-		<title>Using Nginx and go through unix socket &middot; SlashQuery /?</title>
+		<title>Build your API Gateway &middot; SlashQuery /?</title>
 		<link rel="shortcut icon" href="https://slashquery.com/images/favicon.ico">
         <link rel="apple-touch-icon" sizes="57x57" href="https://slashquery.com/images/apple-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="60x60" href="https://slashquery.com/images/apple-icon-60x60.png">
@@ -63,43 +63,25 @@
         <section id="wrapper">
             <article class="post">
                 <header>
-                    <h1>Using Nginx and go through unix socket</h1>
+                    <h1>Build your API Gateway</h1>
                     <h2 class="headline">
                     <br>
+                    
+                    
+                        
+                            <a href="https://slashquery.com/tags/build">build</a>
+                        
+                    
                     
                     </h2>
                 </header>
                 <section id="post-body">
-                    <p>Nginx configuration:</p>
+                    <p>Because of the <a href="/post/microservices-using-an-api-gateway/">plugins (middleware)</a>
+is not possible to have a generic binary, therefore after creating the
+<a href="/posts/slashquery.yaml">configuration file</a> and based on the plugins defined
+the gateway needs to be build.</p>
 
-<pre><code class="language-nginx">upstream slashquery {
-    server unix:/tmp/slashquery.sock
-    keepalive 60;
-}
-
-server {
-    listen 80 default_server;
-    server_name _;
-
-    location / {
-        proxy_pass http://slashquery;
-        proxy_http_version 1.1; # for keep-alive
-        proxy_redirect off;
-        proxy_set_header Host $http_host;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Real-IP $remote_addr;
-    }
-}
-</code></pre>
-
-<p>SlashQuery configuration:</p>
-
-<pre><code class="language-yaml">config:
-  socket: /tmp/slashquery.sock
-  ...
-</code></pre>
-
-<p>When <code>socket</code> is defined <code>host</code> and <code>port</code> are ignored.</p>
+<p>TODO</p>
 
                 </section>
             </article>
@@ -107,7 +89,7 @@ server {
                 
                     
                 <section id="sharing">
-                    <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fslashquery.com%2fpost%2fnginx-and-go-through-unix-socket%2f - Using%20Nginx%20and%20go%20through%20unix%20socket "><span class="icon-twitter"> Tweet</span></a>
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fslashquery.com%2fpost%2fbuild-your-api-gateway%2f - Build%20your%20API%20Gateway "><span class="icon-twitter"> Tweet</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(
@@ -123,9 +105,9 @@ server {
             <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'slashquery';
-    var disqus_identifier = 'https:\/\/slashquery.com\/post\/nginx-and-go-through-unix-socket\/';
-    var disqus_title = 'Using Nginx and go through unix socket';
-    var disqus_url = 'https:\/\/slashquery.com\/post\/nginx-and-go-through-unix-socket\/';
+    var disqus_identifier = 'https:\/\/slashquery.com\/post\/build-your-api-gateway\/';
+    var disqus_title = 'Build your API Gateway';
+    var disqus_url = 'https:\/\/slashquery.com\/post\/build-your-api-gateway\/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
