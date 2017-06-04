@@ -98,15 +98,16 @@
 <p>The <strong>plugins</strong> section is a list of plugins each of one defined within a list,
 for example:</p>
 
-<pre><code>- [&quot;github.com/path//to/myplugin&quot;, &quot;myplugin.MyPlugin&quot;]
+<pre><code>- [&quot;github.com/path/to/myplugin&quot;, &quot;myplugin.MyPlugin&quot;]
 </code></pre>
 
-<p>In this case, the first element of the list:</p>
+<p>In this case, the first element of the list, should be the path/url where the
+plugin is located and that could be used as an <a href="https://golang.org/doc/code.html#ImportPaths">import path</a>:</p>
 
 <pre><code>github.com/path/to/myplugin
 </code></pre>
 
-<p>Is the path where the plugin is located, and the second part:</p>
+<p>The second part:</p>
 
 <pre><code>myplugin.MyPlugin
 </code></pre>
