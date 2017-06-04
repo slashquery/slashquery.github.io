@@ -96,7 +96,7 @@ directory:</p>
 
 <p>or</p>
 
-<pre><code>go run genroutes.go -f /path/to/slashquery.yml
+<pre><code class="language-sh">go run genroutes.go -f /path/to/slashquery.yml
 </code></pre>
 
 <blockquote>
@@ -117,6 +117,10 @@ based on defined plugins.</p>
 <li>Prometheus</li>
 </ul>
 
+<blockquote>
+<p>See <a href="/post/plugins">plugins</a></p>
+</blockquote>
+
 <p>The request flow would be something like this:</p>
 
 <pre><code class="language-pre">api.example.com/foo                                     LoadBalancer --&lt; upstream
@@ -129,7 +133,7 @@ based on defined plugins.</p>
 
 <pre><code class="language-yaml">foo:
   url: http://foo.example.com
-  plugins: # the order of the plugins metters
+  plugins: # the order of the plugins meters
     - [&quot;github.com/slashquery-plugins/requestid&quot;, &quot;requestid.RequestID&quot;]
     - [&quot;github.com/slashquery-plugins/waf&quot;, &quot;waf.WAF&quot;]
     - [&quot;github.com/slashquery-plugins/cors&quot;, &quot;cors.CORS&quot;]
