@@ -83,6 +83,35 @@ is not possible to have a generic binary, therefore after creating the
 <a href="/posts/slashquery-yml">configuration file</a> and based on the plugins defined
 the gateway needs to be build.</p>
 
+<h1 id="setup">Setup</h1>
+
+<p>Setup go environment <a href="https://golang.org/doc/install">https://golang.org/doc/install</a></p>
+
+<blockquote>
+<p>go &gt;= 1.7 is required</p>
+</blockquote>
+
+<p>For example using $HOME/go for your workspace</p>
+
+<pre><code>$ export GOPATH=$HOME/go
+</code></pre>
+
+<p>Create the directory:</p>
+
+<pre><code>$ mkdir -p $HOME/go/src/github.com/slashquery
+</code></pre>
+
+<p>Clone project into that directory:</p>
+
+<pre><code>$ git clone git@github.com:slashquery/slashquery.git $HOME/go/src/github.com/slashquery/slashquery
+</code></pre>
+
+<p>Build by just typing <code>make</code>:</p>
+
+<pre><code>$ cd $HOME/go/src/github.com/slashquery/slashquery
+$ make CONFIG=/path/to/slashquery.yml
+</code></pre>
+
 <h1 id="how-it-works">How it works</h1>
 
 <p>The <strong>routes</strong> section in the <a href="/posts/slashquery-yml">configuration file</a> is
@@ -118,7 +147,7 @@ based on defined plugins.</p>
 </ul>
 
 <blockquote>
-<p>See <a href="/post/plugins">plugins</a></p>
+<p>See more about the <a href="/post/plugins">plugins here.</a></p>
 </blockquote>
 
 <p>The request flow would be something like this:</p>
