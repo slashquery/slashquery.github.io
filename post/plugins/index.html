@@ -79,6 +79,81 @@
                 </header>
                 <section id="post-body">
                     
+
+<p>Plugins are handlers that satisfy the
+<a href="https://golang.org/pkg/net/http/#Handler">http.Handler</a>.</p>
+
+<p>They are declared in the <strong>routes</strong> section of the
+<a href="/posts/slashquery-yaml">configuration file</a> for example:</p>
+
+<pre><code class="language-yaml">foo:
+  url: http://foo.example.com
+  plugins: # the order of the plugins meters
+    - [&quot;github.com/slashquery-plugins/requestid&quot;, &quot;requestid.RequestID&quot;]
+    - [&quot;github.com/slashquery-plugins/waf&quot;, &quot;waf.WAF&quot;]
+    - [&quot;github.com/slashquery-plugins/cors&quot;, &quot;cors.CORS&quot;]
+    - [&quot;github.com/slashquery-plugins/prometheus&quot;, &quot;prometheus.Prometheus&quot;]
+</code></pre>
+
+<p>The <strong>plugins</strong> section is a list of plugins each of one defined within a list,
+for example:</p>
+
+<pre><code>- [&quot;github.com/path//to/myplugin&quot;, &quot;myplugin.MyPlugin&quot;]
+</code></pre>
+
+<p>In this case, the first element of the list:</p>
+
+<pre><code>github.com/path/to/myplugin
+</code></pre>
+
+<p>Is the path where the plugin is located, and the second part:</p>
+
+<pre><code>myplugin.MyPlugin
+</code></pre>
+
+<p>Corresponds to the way the plugin should be called.</p>
+
+<h2 id="basic-example-of-a-plugin">Basic example of a plugin</h2>
+
+<pre><code class="language-go">package myplugin
+
+import (
+	&quot;log&quot;
+	&quot;net/http&quot;
+	&quot;time&quot;
+)
+
+func MyPlugin(next http.Handler) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set(&quot;my-plugin&quot;, &quot;1&quot;)
+		next.ServeHTTP(w, r)
+	})
+}
+</code></pre>
+
+<h2 id="make-conf-path-to-slashquery-yml">make CONF=/path/to/slashquery.yml</h2>
+
+<p>When generating the routes, the <code>routes.go</code> file will include the source and
+Method of the plugin, for example:</p>
+
+<pre><code class="language-go">package slashquery
+
+import (
+    &quot;github.com/nbari/violetear&quot;
+    &quot;github.com/nbari/violetear/middleware&quot;
+
+    &quot;github.com/path/to/myplugin&quot;
+)
+
+
+// AddRoutes create router routes
+func (sq *Slashquery) AddRoutes(router *violetear.Router) {
+	router.Handle(&quot;test-myplugin/*&quot;, middleware.New(myplugin.MyPlugin).Then(sq.Proxy(&quot;test-myplugin&quot;)))
+}
+</code></pre>
+
+<p>The current <a href="https://github.com/slashquery/slashquery/blob/master/Makefile">Makefile</a> uses <a href="https://godoc.org/golang.org/x/tools/cmd/goimports">goimports</a> to add or remove imports lines.</p>
+
                 </section>
             </article>
             <footer id="post-meta" class="clearfix">
