@@ -114,19 +114,19 @@ plugin is located and that could be used as an <a href="https://golang.org/doc/c
 
 <p>Corresponds to the way the plugin should be called.</p>
 
-<h2 id="basic-example-of-a-plugin">Basic example of a plugin</h2>
+<h2 id="example-of-a-plugin">Example of a plugin</h2>
+
+<p>This plugin only adds a header, in practices something more useful would be used.</p>
 
 <pre><code class="language-go">package myplugin
 
 import (
-	&quot;log&quot;
 	&quot;net/http&quot;
-	&quot;time&quot;
 )
 
 func MyPlugin(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		w.Header().Set(&quot;my-plugin&quot;, &quot;1&quot;)
+		w.Header().Set(&quot;my-plugin&quot;, &quot;testing slashquery&quot;)
 		next.ServeHTTP(w, r)
 	})
 }
