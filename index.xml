@@ -7,21 +7,10 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright> </copyright>
-    <lastBuildDate>Sun, 04 Jun 2017 13:14:33 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 03 Jun 2017 09:58:25 +0200</lastBuildDate>
     
 	<atom:link href="https://slashquery.com/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Using Nginx and go through unix socket</title>
-      <link>https://slashquery.com/post/nginx-and-go-through-unix-socket/</link>
-      <pubDate>Sun, 04 Jun 2017 13:14:33 +0200</pubDate>
-      
-      <guid>https://slashquery.com/post/nginx-and-go-through-unix-socket/</guid>
-      <description>Nginx configuration:
-upstream slashquery { server unix:/tmp/slashquery.sock keepalive 60; } server { listen 80 default_server; server_name _; location / { proxy_pass http://slashquery; proxy_http_version 1.1; # for keep-alive proxy_redirect off; proxy_set_header Host $http_host; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_set_header X-Real-IP $remote_addr; } }  SlashQuery configuration:
-config: socket: /tmp/slashquery.sock resolver: 8.8.8.8 # fallback to /etc/resolve.conf request-id: X-Request-Id # use existing header ...  When socket is defined host and port are ignored.</description>
-    </item>
     
     <item>
       <title>Microservices using an API Gateway.</title>
@@ -33,6 +22,17 @@ config: socket: /tmp/slashquery.sock resolver: 8.8.8.8 # fallback to /etc/resolv
 (slashquery API Gateway) api.example.com/&amp;lt;path endpoint&amp;gt; | (plugins) (upstream) (microservices) | /home | /* &amp;gt;--[middleware]---[LoadBalancer]--&amp;lt; /home | /home | | /foo | /foo/* &amp;gt;--[middleware]---[LoadBalancer]--&amp;lt; /foo | /foo | | /foo-version-2 (versioning) | /foo/* &amp;gt;--[middleware]---[LoadBalancer]--&amp;lt; /foo-version-2 | /foo-version-2 | | /bar ` /bar/* &amp;gt;--[middleware]---[LoadBalancer]--&amp;lt; /bar /bar   More about versioning: https://violetear.org/post/versioning/
  The configuration file in YAML format:
 config: host: ~ # listen all IP&#39;s port: 80 resolver: 8.</description>
+    </item>
+    
+    <item>
+      <title>Using Nginx and go through unix socket</title>
+      <link>https://slashquery.com/post/nginx-and-go-through-unix-socket/</link>
+      <pubDate>Sat, 03 Jun 2017 09:58:24 +0200</pubDate>
+      
+      <guid>https://slashquery.com/post/nginx-and-go-through-unix-socket/</guid>
+      <description>Nginx configuration:
+upstream slashquery { server unix:/tmp/slashquery.sock keepalive 60; } server { listen 80 default_server; server_name _; location / { proxy_pass http://slashquery; proxy_http_version 1.1; # for keep-alive proxy_redirect off; proxy_set_header Host $http_host; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_set_header X-Real-IP $remote_addr; } }  SlashQuery configuration:
+config: socket: /tmp/slashquery.sock resolver: 8.8.8.8 # fallback to /etc/resolve.conf request-id: X-Request-Id # use existing header ...  When socket is defined host and port are ignored.</description>
     </item>
     
     <item>
