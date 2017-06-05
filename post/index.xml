@@ -47,7 +47,7 @@ git clone git@github.com:slashquery/slashquery.git $HOME/go/src/github.com/slash
       <guid>https://slashquery.com/post/slashquery-yaml/</guid>
       <description>The configuration file is composed of 3 sections:
  config routes upstreams  Example:
-config: socket: /tmp/slashquery.sock routes: get: path: /get upstream: httpbin methods: - GET upstream: httpbin: servers: - httpbin.org # config  The config allow the following options:
+config: socket: /tmp/slashquery.sock routes: get: path: /get upstream: httpbin methods: - GET upstream: httpbin: servers: - httpbin.org  The config allow the following options:
  debug host port request-id resolver socket  </description>
     </item>
     
