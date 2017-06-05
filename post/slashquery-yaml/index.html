@@ -8,7 +8,7 @@
 		<meta name="description" content="API Gateway">
 		<meta name="keywords" content="api, gateway, http, rest, plugging">
 		<meta name="generator" content="Hugo 0.21" />
-		<title>Microservices using an API Gateway. &middot; SlashQuery /?</title>
+		<title>The configuration file &middot; SlashQuery /?</title>
 		<link rel="shortcut icon" href="https://slashquery.com/images/favicon.ico">
         <link rel="apple-touch-icon" sizes="57x57" href="https://slashquery.com/images/apple-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="60x60" href="https://slashquery.com/images/apple-icon-60x60.png">
@@ -63,104 +63,51 @@
         <section id="wrapper">
             <article class="post">
                 <header>
-                    <h1>Microservices using an API Gateway.</h1>
+                    <h1>The configuration file</h1>
                     <h2 class="headline">
                     <br>
-                    
-                    
-                        
-                            <a href="https://slashquery.com/tags/slashquery">slashquery</a>
-                        
-                            <a href="https://slashquery.com/tags/microservices">microservices</a>
-                        
-                            <a href="https://slashquery.com/tags/api">API</a>
-                        
-                    
                     
                     </h2>
                 </header>
                 <section id="post-body">
-                    <p>The big picture:</p>
+                    <p>The configuration file is composed of 3 sections:</p>
 
-<pre><code class="language-pre">   (slashquery API Gateway)
+<ul>
+<li>config</li>
+<li>routes</li>
+<li>upstreams</li>
+</ul>
 
-api.example.com/&lt;path endpoint&gt;
-               |            (plugins)       (upstream)      (microservices)
-               |                                            /home
-               | /*     &gt;--[middleware]---[LoadBalancer]--&lt; /home
-               |                                            /home
-               |
-               |                                            /foo
-               | /foo/* &gt;--[middleware]---[LoadBalancer]--&lt; /foo
-               |                                            /foo
-               |
-               |                                            /foo-version-2
- (versioning)  | /foo/* &gt;--[middleware]---[LoadBalancer]--&lt; /foo-version-2
-               |                                            /foo-version-2
-               |
-               |                                            /bar
-               ` /bar/* &gt;--[middleware]---[LoadBalancer]--&lt; /bar
-                                                            /bar
-</code></pre>
-
-<blockquote>
-<p>More about versioning: <a href="https://violetear.org/post/versioning/">https://violetear.org/post/versioning/</a></p>
-</blockquote>
-
-<p>The configuration file in <a href="http://yaml.org">YAML</a> format:</p>
+<p>Example:</p>
 
 <pre><code class="language-yaml">config:
-  host: ~ # listen all IP's
-  port: 80
-  resolver: 8.8.8.8  # fallback to /etc/resolve.conf
-  request-id: X-Request-Id # use existing header
+  socket: /tmp/slashquery.sock
 
 routes:
-  ~: # api.example.com/* -&gt; http://home.example.com/*
-    path:
-    upstream: home
-    host: example.com
-    plugins:
-      - [&quot;github.com/slashquery-plugins/requestid&quot;, &quot;requestid.RequestID&quot;]
-      - [&quot;github.com/slashquery-plugins/waf&quot;, &quot;waf.WAF&quot;]
-
-  foo: # api.example.com/foo/ -&gt; https://foo.example.com
-    url: https://foo.example.com
-    insecure: yes # allow self signed certificates
-    methods:
-      - POST
-    plugins:
-      - [&quot;github.com/slashquery-plugins/requestid&quot;, &quot;requestid.RequestID&quot;]
-      - [&quot;github.com/slashquery-plugins/waf&quot;, &quot;waf.WAF&quot;]
-      - [&quot;github.com/slashquery-plugins/prometheus&quot;, &quot;prometheus.Prometheus&quot;]
-
-  foo#version.2: # api.example.com/foo/ -&gt; https://foo-version-2.example.com
-    url: https://foo-version-2.example.com
-    insecure: yes # allow self signed certificates
-    methods:
-      - POST
-    plugins:
-      - [&quot;github.com/slashquery-plugins/requestid&quot;, &quot;requestid.RequestID&quot;]
-      - [&quot;github.com/slashquery-plugins/waf&quot;, &quot;waf.WAF&quot;]
-      - [&quot;github.com/slashquery-plugins/prometheus&quot;, &quot;prometheus.Prometheus&quot;]
-
-  bar: # api.example.com/bar -&gt; http://bar.example.com
-    url: http://bar.example.com
+  get:
+    path: /get
+    upstream: httpbin
     methods:
       - GET
-      - HEAD
-      - OPTIONS
-    plugins:
-      - [&quot;github.com/slashquery-plugins/requestid&quot;, &quot;requestid.RequestID&quot;]
-      - [&quot;github.com/slashquery-plugins/waf&quot;, &quot;waf.WAF&quot;]
-      - [&quot;github.com/slashquery-plugins/cors&quot;, &quot;cors.CORS&quot;]
 
-upstreams:
-  home:
+upstream:
+  httpbin:
     servers:
-      - home.example.com
-      - home.example.org
+      - httpbin.org
+
+# config
 </code></pre>
+
+<p>The <code>config</code> allow the following options:</p>
+
+<ul>
+<li>debug</li>
+<li>host</li>
+<li>port</li>
+<li>request-id</li>
+<li>resolver</li>
+<li>socket</li>
+</ul>
 
                 </section>
             </article>
@@ -168,7 +115,7 @@ upstreams:
                 
                     
                 <section id="sharing">
-                    <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fslashquery.com%2fpost%2fmicroservices-using-an-api-gateway%2f - Microservices%20using%20an%20API%20Gateway. "><span class="icon-twitter"> Tweet</span></a>
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fslashquery.com%2fpost%2fslashquery-yaml%2f - The%20configuration%20file "><span class="icon-twitter"> Tweet</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(
@@ -184,9 +131,9 @@ upstreams:
             <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'slashquery';
-    var disqus_identifier = 'https:\/\/slashquery.com\/post\/microservices-using-an-api-gateway\/';
-    var disqus_title = 'Microservices using an API Gateway.';
-    var disqus_url = 'https:\/\/slashquery.com\/post\/microservices-using-an-api-gateway\/';
+    var disqus_identifier = 'https:\/\/slashquery.com\/post\/slashquery-yaml\/';
+    var disqus_title = 'The configuration file';
+    var disqus_url = 'https:\/\/slashquery.com\/post\/slashquery-yaml\/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
