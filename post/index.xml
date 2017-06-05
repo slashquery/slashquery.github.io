@@ -7,22 +7,10 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright> </copyright>
-    <lastBuildDate>Mon, 05 Jun 2017 18:09:44 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 03 Jun 2017 09:58:25 +0200</lastBuildDate>
     
 	<atom:link href="https://slashquery.com/post/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>The configuration file</title>
-      <link>https://slashquery.com/post/slashquery-yaml/</link>
-      <pubDate>Mon, 05 Jun 2017 18:09:44 +0200</pubDate>
-      
-      <guid>https://slashquery.com/post/slashquery-yaml/</guid>
-      <description>The configuration file is composed of 3 sections:
- config routes upstreams  Example:
-config: socket: /tmp/slashquery.sock routes: get: path: /get upstream: httpbin methods: - GET upstream: httpbin: servers: - httpbin.org # config  The config allow the following options:
- debug host port request-id resolver socket  </description>
-    </item>
     
     <item>
       <title>Microservices using an API Gateway.</title>
@@ -49,6 +37,18 @@ Setup Setup go environment https://golang.org/doc/install
 export GOPATH=$HOME/go  Create the directory:
 mkdir -p $HOME/go/src/github.com/slashquery  Clone project into that directory:
 git clone git@github.com:slashquery/slashquery.git $HOME/go/src/github.com/slashquery/slashquery  Create your configuration file and type make CONFIG=/path/to/slashquery.</description>
+    </item>
+    
+    <item>
+      <title>The configuration file</title>
+      <link>https://slashquery.com/post/slashquery-yaml/</link>
+      <pubDate>Sat, 03 Jun 2017 09:57:23 +0200</pubDate>
+      
+      <guid>https://slashquery.com/post/slashquery-yaml/</guid>
+      <description>The configuration file is composed of 3 sections:
+ config routes upstreams  Example:
+config: socket: /tmp/slashquery.sock routes: get: path: /get upstream: httpbin methods: - GET upstream: httpbin: servers: - httpbin.org # config  The config allow the following options:
+ debug host port request-id resolver socket  </description>
     </item>
     
     <item>
