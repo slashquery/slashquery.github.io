@@ -7,7 +7,7 @@
 		<meta name="author" content="SlashQuery /?">
 		<meta name="description" content="API Gateway">
 		<meta name="keywords" content="api, gateway, http, rest, plugging">
-		<meta name="generator" content="Hugo 0.21" />
+		<meta name="generator" content="Hugo 0.22.1" />
 		<title>Microservices using an API Gateway. &middot; SlashQuery /?</title>
 		<link rel="shortcut icon" href="https://slashquery.com/images/favicon.ico">
         <link rel="apple-touch-icon" sizes="57x57" href="https://slashquery.com/images/apple-icon-57x57.png">
@@ -121,8 +121,8 @@ routes:
     upstream: home
     host: example.com
     plugins:
-      - [&quot;github.com/slashquery-plugins/requestid&quot;, &quot;requestid.RequestID&quot;]
-      - [&quot;github.com/slashquery-plugins/waf&quot;, &quot;waf.WAF&quot;]
+      - requestid
+      - waf
 
   foo: # api.example.com/foo/ -&gt; https://foo.example.com
     url: https://foo.example.com
@@ -130,9 +130,9 @@ routes:
     methods:
       - POST
     plugins:
-      - [&quot;github.com/slashquery-plugins/requestid&quot;, &quot;requestid.RequestID&quot;]
-      - [&quot;github.com/slashquery-plugins/waf&quot;, &quot;waf.WAF&quot;]
-      - [&quot;github.com/slashquery-plugins/prometheus&quot;, &quot;prometheus.Prometheus&quot;]
+      - requestid
+      - waf
+      - cors
 
   foo#version.2: # api.example.com/foo/ -&gt; https://foo-version-2.example.com
     url: https://foo-version-2.example.com
@@ -140,9 +140,9 @@ routes:
     methods:
       - POST
     plugins:
-      - [&quot;github.com/slashquery-plugins/requestid&quot;, &quot;requestid.RequestID&quot;]
-      - [&quot;github.com/slashquery-plugins/waf&quot;, &quot;waf.WAF&quot;]
-      - [&quot;github.com/slashquery-plugins/prometheus&quot;, &quot;prometheus.Prometheus&quot;]
+      - requestid
+      - waf
+      - cors
 
   bar: # api.example.com/bar -&gt; http://bar.example.com
     url: http://bar.example.com
@@ -151,9 +151,9 @@ routes:
       - HEAD
       - OPTIONS
     plugins:
-      - [&quot;github.com/slashquery-plugins/requestid&quot;, &quot;requestid.RequestID&quot;]
-      - [&quot;github.com/slashquery-plugins/waf&quot;, &quot;waf.WAF&quot;]
-      - [&quot;github.com/slashquery-plugins/cors&quot;, &quot;cors.CORS&quot;]
+      - requestid
+      - waf
+      - cors
 
 upstreams:
   home:
@@ -161,6 +161,13 @@ upstreams:
     servers:
       - home.example.com
       - home.example.org
+
+plugins:
+  cors:  [&quot;github.com/slashquery-plugins/cors&quot;, &quot;cors.CORS&quot;]
+  csrf:  [&quot;github.com/slashquery-plugins/csrf&quot;, &quot;csrf.CSRF&quot;]
+  prometheus: [&quot;github.com/slashquery-plugins/prometheus&quot;, &quot;prometheus.Prometheus&quot;]
+  requestid: [&quot;github.com/slashquery-plugins/requestid&quot;, &quot;requestid.RequestID&quot;]
+  waf: [&quot;github.com/slashquery-plugins/waf&quot;, &quot;waf.WAF&quot;]
 </code></pre>
 
                 </section>
