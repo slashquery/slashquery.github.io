@@ -86,13 +86,14 @@
 <p>They are declared in the <strong>routes</strong> section of the
 <a href="/posts/slashquery-yaml">configuration file</a> for example:</p>
 
-<pre><code class="language-yaml">foo:
-  url: http://foo.example.com
-  plugins: # the order of the plugins meters
-    - requestid
-    - waf
-    - cors
-    - prometheus
+<pre><code class="language-yaml">routes:
+  foo:
+    url: http://foo.example.com
+    plugins: # the order of the plugins meters
+        - requestid
+        - waf
+        - cors
+        - prometheus
 
 plugins:
   cors: [&quot;github.com/slashquery-plugins/cors&quot;, &quot;cors.CORS&quot;]
