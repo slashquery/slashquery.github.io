@@ -59,8 +59,7 @@ config: socket: /tmp/slashquery.sock routes: get: path: /get upstream: httpbin m
       <guid>https://slashquery.com/post/plugins/</guid>
       <description>Plugins are handlers that satisfy the http.Handler.
 They are declared in the routes section of the configuration file for example:
-foo: url: http://foo.example.com plugins: # the order of the plugins meters - [&amp;quot;github.com/slashquery-plugins/requestid&amp;quot;, &amp;quot;requestid.RequestID&amp;quot;] - [&amp;quot;github.com/slashquery-plugins/waf&amp;quot;, &amp;quot;waf.WAF&amp;quot;] - [&amp;quot;github.com/slashquery-plugins/cors&amp;quot;, &amp;quot;cors.CORS&amp;quot;] - [&amp;quot;github.com/slashquery-plugins/prometheus&amp;quot;, &amp;quot;prometheus.Prometheus&amp;quot;]  The plugins section is a list of plugins each of one defined within a list, for example:
-- [&amp;quot;github.com/path/to/myplugin&amp;quot;, &amp;quot;myplugin.MyPlugin&amp;quot;]  In this case, the first element of the list, should be the path/url where the plugin is located and that could be used as an import path:</description>
+foo: url: http://foo.example.com plugins: # the order of the plugins meters - requestid - waf - cors - prometheus plugins: cors: [&amp;quot;github.com/slashquery-plugins/cors&amp;quot;, &amp;quot;cors.CORS&amp;quot;] csrf: [&amp;quot;github.com/slashquery-plugins/csrf&amp;quot;, &amp;quot;csrf.CSRF&amp;quot;] prometheus: [&amp;quot;github.com/slashquery-plugins/prometheus&amp;quot;, &amp;quot;prometheus.Prometheus&amp;quot;] requestid: [&amp;quot;github.com/slashquery-plugins/requestid&amp;quot;, &amp;quot;requestid.RequestID&amp;quot;] waf: [&amp;quot;github.com/slashquery-plugins/waf&amp;quot;, &amp;quot;waf.WAF&amp;quot;]  The plugins section is a list of plugins each of one defined within a list, for example:</description>
     </item>
     
     <item>

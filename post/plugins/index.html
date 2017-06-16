@@ -89,10 +89,17 @@
 <pre><code class="language-yaml">foo:
   url: http://foo.example.com
   plugins: # the order of the plugins meters
-    - [&quot;github.com/slashquery-plugins/requestid&quot;, &quot;requestid.RequestID&quot;]
-    - [&quot;github.com/slashquery-plugins/waf&quot;, &quot;waf.WAF&quot;]
-    - [&quot;github.com/slashquery-plugins/cors&quot;, &quot;cors.CORS&quot;]
-    - [&quot;github.com/slashquery-plugins/prometheus&quot;, &quot;prometheus.Prometheus&quot;]
+    - requestid
+    - waf
+    - cors
+    - prometheus
+
+plugins:
+  cors: [&quot;github.com/slashquery-plugins/cors&quot;, &quot;cors.CORS&quot;]
+  csrf: [&quot;github.com/slashquery-plugins/csrf&quot;, &quot;csrf.CSRF&quot;]
+  prometheus: [&quot;github.com/slashquery-plugins/prometheus&quot;, &quot;prometheus.Prometheus&quot;]
+  requestid: [&quot;github.com/slashquery-plugins/requestid&quot;, &quot;requestid.RequestID&quot;]
+  waf: [&quot;github.com/slashquery-plugins/waf&quot;, &quot;waf.WAF&quot;]
 </code></pre>
 
 <p>The <strong>plugins</strong> section is a list of plugins each of one defined within a list,
