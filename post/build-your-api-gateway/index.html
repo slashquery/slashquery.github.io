@@ -7,7 +7,7 @@
 		<meta name="author" content="SlashQuery /?">
 		<meta name="description" content="API Gateway">
 		<meta name="keywords" content="api, gateway, http, rest, plugging">
-		<meta name="generator" content="Hugo 0.24.1" />
+		<meta name="generator" content="Hugo 0.25" />
 		<title>Build your API Gateway &middot; SlashQuery /?</title>
 		<link rel="shortcut icon" href="https://slashquery.com/images/favicon.ico">
         <link rel="apple-touch-icon" sizes="57x57" href="https://slashquery.com/images/apple-icon-57x57.png">
@@ -203,16 +203,21 @@ plugin to be called is <code>RequestID</code> and the latest one <code>Prometheu
             </footer>
 
             <div id="disqus_thread"></div>
-<script type="text/javascript">
-    var disqus_shortname = 'slashquery';
-    var disqus_identifier = 'https:\/\/slashquery.com\/post\/build-your-api-gateway\/';
-    var disqus_title = 'Build your API Gateway';
-    var disqus_url = 'https:\/\/slashquery.com\/post\/build-your-api-gateway\/';
-
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
     (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "slashquery" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
     })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
